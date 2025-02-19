@@ -1,0 +1,13 @@
+Anotações do curso de Algoritmo
+
+-----------------------
+
+- Introdução a Algoritmos
+- Comandos de Entrada e Operadores
+- Operadores Lógicos e Relacionais
+- Estruturas Condicionais
+- Estruturas de Repetição
+- Procedimentos
+- Funções
+- Vetores
+- Matrizes
