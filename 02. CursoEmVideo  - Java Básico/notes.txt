@@ -1,0 +1,81 @@
+Anotações do curso de Java Básico
+
+-----------------------
+
+Ferramentas
+
+Java
+Swing
+JavaFX
+
+-----------------------
+
+Siglas
+
+JavaC (Java Compiler)
+WORA (Write One Run Anywhere)
+JVM (Java Virtual Machine)
+SDK (Software Development Kit)
+JRE (Java Runtime Environment)
+JDK (Java Development Kit)
+IDE (Integrated Development Environment)
+AWT (Abstract Window Toolkit)
+
+-----------------------
+
+Conceitos de Orientação a Objetos
+
+Herança
+Encapsulamento
+Evento
+Método
+Interface
+
+-----------------------
+
+Operadores
+
+Operadores aritméticos
+Operadores unários
+Operadores de atribuição
+
+Classe Math
+Arredondamentos
+Gerador de números
+
+Operador ternário
+Operadores relacionais
+Operadores lógicos
+Expressões lógicas compostas
+
+-----------------------
+
+Estruturas de controle
+
+Condição simples
+Condição composta
+Condição composta encadeada
+Condição de múltipla escolha
+
+-----------------------
+
+Estruturas de repetição
+
+Repetição com teste no início
+Repetição com teste no final
+Repetição com variável de controle
+
+Laços aninhados
+
+-----------------------
+
+Variáveis compostas (vetores)
+
+-----------------------
+
+Rotinas
+
+Procedimento/Método (sem retorno)
+Função (com retorno)
+
+-----------------------
