@@ -1,0 +1,102 @@
+Java POO - Aula Teórica 2
+
+---------
+
+Objeto Físico
+
+Objeto
+- garrafa
+
+Atributos
+- cor
+- tamanho
+- tampa
+- capacidade
+
+Métodos
+- calcularTemperatura
+- beberLiquido()
+- abrirTampa()
+- fecharTampa()
+
+Estado
+- cor: preto
+- tamanho: 25cm
+- tampa: tampado
+- capacidade: 500ml
+
+---------
+
+Objeto Conceitual
+
+Objeto
+- estudar aula
+
+Atributos
+- plataformaAula
+- anotacoesAula
+- softwaresUtilizados[]
+
+Métodos
+- assistirAula()
+- pararAula()
+- desligarCelular()
+- anotar()
+
+Estado
+- plataformaAula: curso em video
+- anotacoesAula: notepad
+- softwaresUtilizados[]: curso em video, youtube, notepad, notion, netbeans
+
+-----------------------
+
+Java POO - Aula Teórica 9
+
+Questão 01: C (CERTO)
+Questão 02: A (CERTO)
+Questão 03: A (CERTO)
+Questão 04: B (CERTO)
+Questão 05: C (CERTO)
+Questão 06: C (CERTO)
+Questão 07: D (CERTO)
+Questão 08: D (CERTO)
+Questão 09: B (CERTO)
+Questão 10: B (CERTO)
+Questão 11: B (CERTO)
+Questão 12: D (CERTO)
+Questão 13: D (CERTO)
+Questão 14: D (CERTO)
+Questão 15: D (CERTO)
+
+-----------------------
+
+Java POO - Aula Teórica 14
+
+Questão 01: C (ERRADO) / B (CERTO)
+Questão 02: B (CERTO)
+Questão 03: B (CERTO)
+Questão 04: C (CERTO)
+Questão 05: A (CERTO)
+Questão 06: D (CERTO)
+Questão 07: C (CERTO)
+Questão 08: D (CERTO)
+Questão 09: D (CERTO)
+Questão 10: B (CERTO)
+
+-----------------------
+
+Java POO - Aula Teórica 15
+
+Questão 01: C (CERTO)
+Questão 02: A (CERTO)
+Questão 03: C (CERTO)
+Questão 04: B (ERRADO) / D (CERTO)
+Questão 05: B (CERTO)
+Questão 06: D (CERTO)
+Questão 07: C (CERTO)
+Questão 08: A (CERTO)
+Questão 09: B (CERTO)
+Questão 10: D (CERTO)
+
+-----------------------
+
