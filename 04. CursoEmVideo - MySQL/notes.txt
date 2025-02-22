@@ -1,0 +1,711 @@
+Anotações do curso de Banco de Dados com MySQL
+
+-----------------------
+
+Aula 01
+
+Origem dos Bancos de Dados
+
+Como os dados eram armazenados
+Ficha > Pasta > Arquivo
+
+Com base nisso, vieram
+Registros > Tabelas > Arquivos
+
+- Arquivos de acesso sequenciais
+- Arquivos de acesso direto
+
+Um Banco de Dados é composto de 4 partes
+
+- Base de Dados
+- Sistema Gerenciador
+- Linguagem de Exploração
+- Programas Adicionais
+
+Modelos de Banco de Dados
+
+Modelo Hierárquico
+Modelo em Rede
+Modelo Relacional
+Modelo Baseado em Documento
+Modelo Orientado a Objeto
+
+Exemplos de Banco de Dados
+
+Oracle
+IBM
+dBASE
+SQL Server
+MySQL
+MariaDB
+Firebird
+PostgreSQL
+
+Siglas
+
+SGBD (Sistema Gerenciador de Banco de Dados)
+SEQUEL (Structured English Query Language)
+SQL (Structured Query Language)
+
+-----------------------
+
+Aula 02
+
+Iniciando no Mundo do MySQL
+
+# Tipos de instruções do MySQL
+
+DDL - Definição
+DML - Manipulação
+DQL - Solicitações
+DCL - Controle
+DTL - Transações
+
+# Características de uma boa transação
+
+Durabilidade
+Isolamento
+Consistência
+Atomicidade
+
+-----------------------
+
+Aula 03
+
+Criando o Primeiro Banco de Dados
+
+# Tipos Primitivos
+
+- Numérico
+Inteiro - TinyInt, SmallInt, Int, MediumInt, BigInt
+Real - Decimal, Float, Double, Real
+Lógico - Bit, Boolean
+
+- Data/Tempo
+Date, DateTime, TimeStamp, Time, Year
+
+- Literal
+Caractere - Char, VarChar
+Texto - TinyText, Text, MediumText, LongText
+Binário - TinyBlob, Blob, MediumBlob, LongBlob
+Coleção - Enum, Set
+
+- Espacial
+Geometry, Point, Polygon, MultiPolygon
+
+# Queries utilizadas
+
+create database cadastro;
+
+use cadastro;
+
+create table pessoas(
+	nome varchar(30),
+    idade tinyint,
+    sexo char(1),
+    peso float, 
+    altura float, 
+    nacionalidade varchar(20)
+);
+
+describe pessoas;
+
+
+-----------------------
+
+Aula 04
+
+Melhorando seu Banco de Dados
+
+# Queries utilizadas
+
+drop database cadastro;
+
+create database cadastro 
+default character set utf8 
+default collate utf8_general_ci;
+
+create table pessoas (
+	id int not null auto_increment,
+	nome varchar(30) not null, 
+	nascimento date, 
+	sexo enum('M', 'F'), 
+	peso decimal(3,2), 
+	altura decimal(3,2), 
+	nacionalidade varchar(20) default 'Brasil',
+    primary key(id)
+) default charset utf8;
+
+-----------------------
+
+Aula 05
+
+Inserindo Dados na Tabela
+
+DDL - Data Definition Language
+
+create database
+create table
+
+DML - Data Manipulation Language
+
+insert into
+
+# Queries utilizadas
+
+insert into pessoas
+(nome, nascimento, sexo, peso, altura, nacionalidade)
+values
+('Godofredo', '1984-01-02', 'M', '78.5', '1.83', 'Brasil');
+
+insert into pessoas
+(nome, nascimento, sexo, peso, altura, nacionalidade)
+values
+('Maria', '1999-12-30', 'F', '55.2', '1.65', 'Portugal');
+
+insert into pessoas
+(id, nome, nascimento, sexo, peso, altura, nacionalidade)
+values
+(default, 'Creuza', '1920-12-30', 'F', '50.2', '1.65', default);
+
+insert into pessoas values
+(default, 'Adalgiza', '1930-11-2', 'F', '63.2', '1.75', 'Irlanda');
+
+insert into pessoas values
+(default, 'Cláudio', '1975-4-22', 'M', '99.0', '2.15', 'Brasil'),
+(default, 'Pedro', '1999-12-3', 'M', '87', '2', default),
+(default, 'Janaína', '1987-11-12', 'F', '75.4', '1.66', 'EUA');
+
+select * from pessoas;
+
+-----------------------
+
+Aula 06
+
+Alterando a Estrutura da tabela
+
+DDL - Data Definition Language
+
+create database
+create table
+alter table
+drop table
+
+DML - Data Manipulation Language
+
+insert into
+
+# Queries utilizadas
+
+desc pessoas;
+
+select * from pessoas;
+
+alter table pessoas
+add column profissao varchar(10);
+
+alter table pessoas
+drop column profissao;
+
+alter table pessoas
+add column profissao varchar(10) after nome;
+
+alter table pessoas
+add codigo int first;
+
+alter table pessoas
+modify column profissao varchar(20) not null default '';
+
+alter table pessoas
+change column profissao prof varchar(20);
+
+alter table pessoas
+rename to gafanhotos;
+
+create table if not exists gafanhotos (teste int);
+
+create table if not exists cursos(
+	nome varchar(30) not null unique,
+    descricao text,
+    carga int unsigned,
+    totaulas int unsigned,
+    ano year default '2016'
+) default charset=utf8;
+
+alter table cursos
+add column idcurso int first;
+
+alter table cursos
+add primary key (idcurso);
+
+describe cursos;
+
+create table if not exists teste (
+	id int,
+    nome varchar(10),
+    idade int
+);
+
+insert into teste value
+('1', 'Pedro', '22'),
+('2', 'Maria', '12'),
+('3', 'Maricota', '77');
+
+select * from teste;
+
+drop table if exists alunos;
+
+drop table if exists teste;
+
+-----------------------
+
+Aula 07
+
+Manipulando Linhas
+
+DDL - Data Definition Language
+
+create database
+create table
+alter table
+drop table
+
+DML - Data Manipulation Language
+
+insert into
+update
+delete
+truncate
+
+# Queries utilizadas
+
+select * from cursos;
+
+insert into cursos values 
+('1','HTML4','Curso de HTML5','40','37','2014'),
+('2','Algoritmos','Lógica de Programação','20','15','2014'),
+('3','Photoshop','Dicas de Photoshop CC','10','8','2014'),
+('4','PGP','Curso de PHP para iniciantes','40','20','2010'),
+('5','Jarva','Introdução à Linguagem Java','10','29','2000'),
+('6','MySQL','Banco de Dados MySQL','30','15','2016'),
+('7','Word','Curso completo de Word','40','30','2016'),
+('8','Sapateado','Danças Rítmicas','40','30','2018'),
+('9','Cozinha Árabe','Aprenda a fazer Kibe','40','30','2018'),
+('10','YouTuber','Gerar polêmica e ganhar inscritos','5','2','2018');
+
+update cursos
+set nome = 'HTML5'
+where idcurso = '1';
+
+update cursos
+set nome = 'PHP', ano = '2015'
+where idcurso = '4';
+
+update cursos
+set nome = 'Java', ano = '2015', carga = '40'
+where idcurso = '5'
+limit 1;
+
+delete from cursos
+where idcurso = '8';
+
+delete from cursos
+where ano = '2018'
+limit 2;
+
+truncate table cursos;
+
+-----------------------
+
+Aula 08
+
+Gerenciando Cópias de Segurança MySQL
+
+Dump
+
+- Exportando banco de dados
+- Importando banco de dados
+
+-----------------------
+
+Aula 09
+
+PhpMyAdmin
+
+Softwares utilizados
+
+- MySQL Workbench
+- Console
+- PhpMyAdmin
+
+-----------------------
+
+Aula 10
+
+PhpMyAdmin
+
+- Criando banco de dados
+- Criando tabela
+
+- Inserindo colunas
+- Editando colunas
+- Removendo colunas
+
+- Inserindo registros
+- Editando registros
+- Removendo registros
+
+- Exportando banco de dados
+
+- Apagando tabela
+- Apagando banco de dados
+
+-----------------------
+
+Aula 11
+
+Obtendo Dados das Tabelas
+
+DDL - Data Definition Language
+
+create database
+create table
+alter table
+drop table
+
+DML - Data Manipulation Language
+
+insert into
+update
+delete
+truncate
+
+DQL - Data Query Language
+
+select
+
+# Queries utilizadas
+
+select * from cursos;
+
+select * from cursos
+order by nome;
+
+select * from cursos
+order by nome asc;
+
+select * from cursos
+order by nome desc;
+
+select ano, nome, carga from cursos
+order by ano, nome;
+
+select * from cursos
+where ano = '2016'
+order by nome;
+
+select nome, descricao, carga from cursos
+where ano = '2016'
+order by nome;
+
+select nome, descricao, ano from cursos
+where ano <= 2015
+order by ano, nome;
+
+select nome, descricao, ano from cursos
+where ano < 2015
+order by ano, nome;
+
+select nome, descricao, ano from cursos
+where ano > 2015
+order by ano, nome;
+
+select nome, descricao, ano from cursos
+where ano >= 2016
+order by ano, nome;
+
+select nome, descricao, ano from cursos
+where ano != 2016
+order by ano, nome;
+
+select nome, descricao, ano from cursos
+where ano <> 2016
+order by ano, nome;
+
+select nome, ano from cursos
+where ano between 2014 and 2016
+order by ano desc, nome asc;
+
+select nome, descricao, ano from cursos
+where ano in (2014, 2016, 2020)
+order by ano;
+
+select nome, carga, totaulas from cursos
+where carga > 35 and totaulas < 30;
+
+select nome, carga, totaulas from cursos
+where carga > 35 or totaulas < 30;
+
+-----------------------
+
+Aula 12
+
+Obtendo Dados das Tabelas
+
+# Queries utilizadas
+
+select * from cursos
+where nome like 'P%';
+
+select * from cursos
+where nome like '%A';
+
+select * from cursos
+where nome like '%A%';
+
+select * from cursos
+where nome not like '%A%';
+
+select * from cursos
+where nome like 'ph%p';
+
+select * from cursos
+where nome like 'ph%p%';
+
+select * from cursos
+where nome like 'ph%p_';
+
+select * from cursos
+where nome like 'p_p%';
+
+select * from cursos
+where nome like 'p__t%';
+
+select * from gafanhotos
+where nome like '%silva%';
+
+select distinct nacionalidade from gafanhotos
+order by nacionalidade;
+
+select distinct carga from cursos
+order by carga;
+
+select count(*) from cursos;
+
+select count(*) from cursos where carga > 40;
+
+select max(carga) from cursos;
+
+select max(totaulas) from cursos where ano = 2016;
+
+select nome, min(totaulas) from cursos where ano = 2016;
+
+select sum(totaulas) from cursos where ano = 2016;
+
+select avg(totaulas) from cursos where ano = 2016;
+
+-----------------------
+
+Aula 13
+
+Obtendo Dados das Tabelas
+
+# Queries utilizadas
+
+select distinct totaulas from cursos
+order by totaulas;
+
+select totaulas, count(*) from cursos
+group by totaulas
+order by totaulas;
+
+select carga, count(nome) from cursos where totaulas = 30
+group by carga;
+
+select ano, count(*) from cursos
+group by ano
+order by count(*) desc;
+
+select ano, count(*) from cursos
+group by ano
+having count(ano) >= 5
+order by count(*) desc;
+
+select ano, count(*) from cursos
+where totaulas > 30
+group by ano
+having ano > 2013
+order by count(*) desc;
+
+select avg(carga) from cursos;
+
+select carga, count(*) from cursos
+where ano > 2015
+group by carga;
+
+select carga, count(*) from cursos
+where ano > 2015
+group by carga
+having carga > (select avg(carga) from cursos);
+
+----------------
+
+Aula 14
+
+Relacionamento entre Tabelas
+
+Diagrama Entidade Relacionamento / Diagrama E-R / DER
+
+# Modelo Relacional
+
+- Entidade
+- Atributos
+- Relacionamento
+- Cardinalidade
+
+# Tipos de Relacionamento
+
+- um-para-um
+- um-para-muitos
+- muitos-para-muitos
+
+# Relacionamento de tabelas
+
+- Chave Primária
+- Chave Estrangeira
+
+Relacionado tabelas de acordo com o tipo de relacionamento
+
+# Queries utilizadas
+
+use cadastro;
+
+describe gafanhotos;
+
+alter table gafanhotos 
+add cursopreferido int;
+
+alter table gafanhotos
+add foreign key (cursopreferido)
+references cursos (idcurso);
+
+select * from gafanhotos;
+
+select * from cursos;
+
+update gafanhotos
+set cursopreferido = '6'
+where id = '1';
+
+delete from cursos 
+where idcurso = '6';
+
+delete from cursos 
+where idcurso = '28';
+
+select nome, cursopreferido from gafanhotos;
+
+select nome, ano from cursos;
+
+select gafanhotos.nome, cursos.nome, cursos.ano
+from gafanhotos join cursos
+on cursos.idcurso = gafanhotos.cursopreferido;
+
+select gafanhotos.nome, cursos.nome, cursos.ano
+from gafanhotos inner join cursos
+on cursos.idcurso = gafanhotos.cursopreferido
+order by gafanhotos.nome;
+
+select g.nome, c.nome, c.ano
+from gafanhotos as g inner join cursos as c
+on c.idcurso = g.cursopreferido
+order by g.nome;
+
+select g.nome, c.nome, c.ano
+from gafanhotos as g left outer join cursos as c
+on c.idcurso = g.cursopreferido;
+
+select g.nome, c.nome, c.ano
+from gafanhotos as g left join cursos as c
+on c.idcurso = g.cursopreferido;
+
+select g.nome, c.nome, c.ano
+from gafanhotos as g right outer join cursos as c
+on c.idcurso = g.cursopreferido;
+
+select g.nome, c.nome, c.ano
+from gafanhotos as g right join cursos as c
+on c.idcurso = g.cursopreferido;
+
+----------------
+
+Aula 15
+
+Relacionamento entre Tabelas
+
+Engines
+
+MyISAM
+InnoDB
+XtraDB
+
+4 principais regras de uma boa transação
+
+ACID
+
+Atomicidade
+Consistência
+Isolamento
+Durabilidade
+
+- Chaves Estrangeiras
+- Join
+  - Inner Join
+  - Outer Join
+    - Left Join
+    - Right Join
+
+----------------
+
+Aula 16
+
+Relacionamento entre Tabelas
+
+Join Múltiplo
+
+# Queries utilizadas
+
+use cadastro;
+
+create table gafanhoto_assiste_curso (
+	id int not null auto_increment,
+    data date,
+    idgafanhoto int,
+    idcurso int,
+    primary key (id),
+    foreign key (idgafanhoto) references gafanhotos (id),
+    foreign key (idcurso) references cursos (idcurso)
+) default charset = utf8;
+
+insert into gafanhoto_assiste_curso values
+(default, '2014-03-01', '1', '2');
+
+select * from gafanhoto_assiste_curso;
+
+select * from gafanhotos g
+join gafanhoto_assiste_curso a
+on g.id = a.idgafanhoto;
+
+select g.nome, a.idcurso from gafanhotos g
+join gafanhoto_assiste_curso a
+on g.id = a.idgafanhoto
+order by g.nome;
+
+select g.nome, c.nome from gafanhotos g
+join gafanhoto_assiste_curso a
+on g.id = a.idgafanhoto
+join cursos c
+on a.idcurso = c.idcurso
+order by g.nome;
+
+----------------
