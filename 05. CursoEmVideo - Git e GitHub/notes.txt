@@ -1,0 +1,183 @@
+Anotações do curso de Git e GitHub
+
+-----------------------
+
+Aula 01
+
+O que é Git? O que é versionamento?
+
+Versionamento
+
+Git - Software de controle de versão
+GitHub - Plataforma de rede social para programadores
+
+# Software de Controle de Versão - VCS
+
+- Centralizado / Linear
+
+CA Software Change Manager (CCC)
+Source Code Control System (SCCS)
+Panvalet
+Concurrent Version System (CVS)
+Apache Subversion (SVN)
+ClearCase
+Visual SourceSafe
+Perforce
+
+- Distribuído
+
+Mercurial
+Bazaar
+Code Co-op
+GNU Arch
+Monotone
+Fossil
+BitKeeper
+Git
+
+# Principais vantagens
+
+Controle de histórico
+Trabalho em equipe
+Ramificação do projeto
+Segurança
+Organização
+
+-----------------------
+
+Aula 02
+
+O que é GitHub? Pra que ele serve?
+
+# Principais vantagens
+
+Repositórios ilimitados
+Hospedagem de código-fonte
+Características de rede social
+GitHub Pages integrado
+Colaboração
+Forks
+
+# Só existe o GitHub?
+
+GitHub
+GitLab
+Bitbucket
+Phabricator
+Gogs
+Kallithea
+
+- Criando perfil no GitHub
+
+-----------------------
+
+Aula 03
+
+A Evolução do Git e GitHub
+
+- História dos sistemas de versionamento
+
+- História do Git
+- História do GitHub
+
+-----------------------
+
+Aula 04
+
+Instalações e Configurações Importantes
+
+VCS - Version Control System
+SCM - Source Code Management
+
+# Baixando e Instalando softwares
+
+Chrome
+Visual Studio Code
+Git SCM
+GitHub Desktop
+
+-----------------------
+
+Aula 05
+
+Criando o Primeiro Repositório
+
+- Criando e atualizando repositório local
+- Criando e atualizando repositório remoto
+
+-----------------------
+
+Aula 06
+
+Instalando GitHub Desktop no Linux
+
+- Só assisti a aula sem replicar nada, pois eu uso Windows
+
+-----------------------
+
+Aula 07
+
+Clonando um Repositório
+
+- Como clonar um repositório do GitHub
+
+-----------------------
+
+Aula 08
+
+Versionando seus Projetos Antigos
+
+- Como versionar projetos antigos no Git e GitHub
+- Criando repositório em organização
+- Clonando repositório de organização
+
+-----------------------
+
+Aula 09
+
+Aprendendo a usar Issues
+
+- Como buscar issues em um repositório
+- Como fazer, responder e finalizar uma issue
+- Como criar e usar saved replies
+
+-----------------------
+
+Aula 10
+
+Guia da Linguagem Markdown
+
+- Livro: Git Pro
+- Livro: Conhecendo o Git
+
+- Como utilizar a linguagem Markdown no GitHub
+
+-----------------------
+
+Aula 11
+
+Sua conta no GitHub com Segurança
+
+- Dicas de segurança para o GitHub
+
+-----------------------
+
+Aula 12
+
+Aprenda a usar Branches
+
+- Criando branches
+- Commit em diferentes branches
+- Merge em situações normais
+- Merge em conflito
+
+-----------------------
+
+Aula 13
+
+Hospedagem grátis no GitHub Pages
+
+- Criando site simples
+- Hospedando site no GitHub
+
+-----------------------
