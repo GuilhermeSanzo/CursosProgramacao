@@ -1,0 +1,196 @@
+Anotações do curso de Git e GitHub do básico ao avançado
+
+-----------------------
+
+Git Bash
+
+7. Comandos básicos para terminal
+
+cd
+ls
+ls -al
+clear
+pwd
+cat
+
+-----------------------
+
+8. Criando seu primeiro repositório GIT
+
+git init
+git status
+
+-----------------------
+
+9. Utilizando comandos Add & Commit
+
+git add <arquivo>
+git commit -m "descrição"
+
+-----------------------
+
+12. Clonando projeto com o GIT
+
+git clone <link>
+git clone <link> .
+
+-----------------------
+
+13. Subindo alterações para o GitHub
+
+git add .
+git push
+
+-----------------------
+
+14. Baixando alterações com Git pull
+
+git pull
+
+-----------------------
+
+15. Sincronizando projeto com o GitHub
+
+git branch -M main
+git remote add origin <origem_do_repo>
+git push -u origin main
+
+-----------------------
+
+16. Entendendo mais sobre Branch
+
+git branch <nome_branch>
+git branch
+git checkout <branch>
+
+-----------------------
+
+17. Operações básicas com Branch
+
+git branch -d <branch>
+git checkout -b <branch>
+git merge
+
+-----------------------
+
+26. Trabalhando com arquivos - reverter, mover, excluir e log
+
+git rm <nome_arquivo>
+git mv <nome_arquivo> <pasta/nome_arquivo>
+git checkout <nome_arquivo>
+git log <nome_arquivo>
+
+-----------------------
+
+27. Configurando informações de usuário no Git
+
+git config --global user.name "seu nome"
+git config --global user.email "seu email"
+git help
+git help <comando>
+
+-----------------------
+
+28. Commits - Utilizando Log e Show
+
+git log
+git log <arquivo>
+git log --oneline
+git show <commit>
+
+-----------------------
+
+29. Commits - Verificar diferenças
+
+git diff
+git diff <arquivo>
+git diff <commit1> <commit2>
+
+-----------------------
+
+30. Commits - Checkout
+
+git checkout <commit>
+git checkout <branch>
+
+-----------------------
+
+31. Commits - Revertendo
+
+git revert HEAD
+git revert <commit>
+git revert --abort
+git revert --continue
+
+-----------------------
+
+32. Commits - Resetando
+
+git reset HEAD
+git reset <arquivo>
+git reset <commit>
+git reset --hard <commit>
+git reset --mixed <commit>
+git reset --soft <commit>
+
+-----------------------
+
+35. Salvando alterações com Git Stash
+
+git stash
+git stash push -m "descrição"
+git stash list
+git stash show -p <numero>
+git stash apply <numero>
+git stash clear
+git stash drop <numero>
+
+-----------------------
+
+36. Utilizando git Tag
+
+git tag -a nome -m "mensagem"
+git tag -d <nome>
+git show <nome>
+git checkout <nome>
+
+-----------------------
+
+37. Enviando Tags para o GitHub
+
+git push origin <nome>
+git push origin --tags
+
+-----------------------
+
+38. Atualizando branchs e tags com Fetch
+
+git fetch -a
+
+-----------------------
+
+40. Utilizando Rebase
+
+git rebase <branch>
+
+-----------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
